@@ -11,47 +11,22 @@ UANGKU adalah aplikasi berbasis web yang dirancang untuk mempermudah manajemen k
 - **Export Data:** Unduh data pelanggan dalam format CSV.
 
 ## Project structure
+Visualisasi susunan file dan direktori proyek UANGKU:
+```text
 uangku/
-│
-├── index.php              
-├── login.php             
-├── logout.php           
-├── .htaccess              
-│
-├── config/
-│   ├── database.php      
-│   └── auth.php           
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css      
-│   ├── js/
-│   │   └── app.js         
-│   └── img/
-│       └── logo.png
-│
-├── layouts/
-│   ├── header.php        
-│   ├── topbar.php        
-│   └── footer.php        
-│
-├── pages/
-│   ├── dashboard.php      
-│   ├── customers.php
-│   ├── income.php
-│   ├── expenses.php
-│   ├── reports.php
-│   └── settings.php     
-│
-├── process/
-│   ├── auth_process.php  
-│   ├── update_pass.php    
-│   ├── crud_customer.php
-│   ├── crud_income.php
-│   └── crud_expense.php
-│
-└── database/
-    └── uangku.sql
+├── config/             # Konfigurasi inti (database.php, auth.php)
+├── assets/             # File statis (CSS, JS, Gambar)
+│   ├── css/            # Style tambahan (style.css)
+│   ├── js/             # Logika frontend (app.js)
+│   └── img/            # Logo dan aset visual (logo.png)
+├── layouts/            # Komponen UI tetap (Header, Topbar, Footer)
+├── pages/              # Halaman konten (Dashboard, Customers, Reports, Settings)
+├── process/            # Logika Backend (Auth, CRUD Pelanggan/Keuangan)
+├── database/           # Backup database SQL (uangku.sql)
+├── index.php           # File utama sebagai routing sistem
+├── login.php           # Halaman autentikasi masuk
+├── logout.php          # Proses keluar sistem
+└── .htaccess           # Konfigurasi server Apache
     
 ##  Cara Install di Localhost
 1. Clone atau download repository ini ke dalam folder `htdocs` (XAMPP) atau `www` (Laragon).
