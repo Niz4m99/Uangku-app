@@ -11,8 +11,6 @@ UANGKU adalah aplikasi berbasis web yang dirancang untuk mempermudah manajemen k
 - **Export Data:** Unduh data pelanggan dalam format CSV.
 
 ## Project structure
-Visualisasi susunan file dan direktori proyek UANGKU:
-
 uangku/
 ├── config/             # Konfigurasi inti (database.php, auth.php)
 ├── assets/             # File statis (CSS, JS, Gambar)
