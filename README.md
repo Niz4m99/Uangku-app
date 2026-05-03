@@ -12,7 +12,7 @@ UANGKU adalah aplikasi berbasis web yang dirancang untuk mempermudah manajemen k
 
 ## Project structure
 Visualisasi susunan file dan direktori proyek UANGKU:
-```text
+
 uangku/
 ├── config/             # Konfigurasi inti (database.php, auth.php)
 ├── assets/             # File statis (CSS, JS, Gambar)
