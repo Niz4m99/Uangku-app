@@ -1,62 +1,69 @@
-# 💰 UANGKU - Manajemen Keuangan & WiFi System
+#  UANGKU - Aplikasi Manajemen Keuangan & WiFi
 
-UANGKU adalah aplikasi manajemen keuangan berbasis web yang dirancang untuk mempermudah pencatatan pelanggan, pemantauan arus kas (pemasukan/pengeluaran), dan pengelolaan operasional bisnis secara real-time. Dibangun menggunakan PHP murni (PDO) untuk performa ringan dan Tailwind CSS untuk antarmuka modern yang responsif.
+UANGKU adalah aplikasi berbasis web yang dirancang untuk mempermudah manajemen keuangan, pencatatan pelanggan, dan pemantauan aktivitas bisnis. Dibangun menggunakan PHP murni (PDO), MySQL, dan Tailwind CSS.
 
-## 📂 Struktur Aplikasi
+##  Fitur Utama
+- **Dashboard Interaktif:** Ringkasan statistik pelanggan, pemasukan, dan pengeluaran.
+- **Manajemen Pelanggan:** Tambah, edit, hapus, dan pantau status pelanggan.
+- **Pemasukan & Pengeluaran:** Pencatatan arus kas yang rapi.
+- **Log Aktivitas:** Memantau siapa melakukan apa beserta IP Address-nya.
+- **Manajemen User (Multi-Role):** Sistem hak akses untuk Admin dan Kasir.
+- **Export Data:** Unduh data pelanggan dalam format CSV.
 
-Memahami susunan file dan direktori dalam proyek ini:
-```text
+## Project structure
 uangku/
-├── assets/             # File statis (Logo, Icon, Gambar)
+│
+├── index.php              
+├── login.php             
+├── logout.php           
+├── .htaccess              
+│
+├── config/
+│   ├── database.php      
+│   └── auth.php           
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css      
+│   ├── js/
+│   │   └── app.js         
 │   └── img/
-├── config/             # Konfigurasi inti (database.php)
-├── database/           # Backup database (uangku.sql)
-├── layouts/            # Komponen UI tetap (Header, Footer, Sidebar)
-├── pages/              # Halaman konten (Dashboard, Pelanggan, Settings)
-├── process/            # Logika Backend (Auth, Export CSV, CRUD)
-├── index.php           # File utama (Routing system)
-├── login.php           # Halaman autentikasi masuk
-└── logout.php          # Proses penghapusan session
-✨ Fitur Unggulan
-📊 Dashboard Interaktif: Ringkasan statistik pelanggan dan grafik keuangan.
+│       └── logo.png
+│
+├── layouts/
+│   ├── header.php        
+│   ├── topbar.php        
+│   └── footer.php        
+│
+├── pages/
+│   ├── dashboard.php      
+│   ├── customers.php
+│   ├── income.php
+│   ├── expenses.php
+│   ├── reports.php
+│   └── settings.php     
+│
+├── process/
+│   ├── auth_process.php  
+│   ├── update_pass.php    
+│   ├── crud_customer.php
+│   ├── crud_income.php
+│   └── crud_expense.php
+│
+└── database/
+    └── uangku.sql
+    
+##  Cara Install di Localhost
+1. Clone atau download repository ini ke dalam folder `htdocs` (XAMPP) atau `www` (Laragon).
+2. Buka **phpMyAdmin**, buat database baru dengan nama `uangku_db`.
+3. Import file **`uangku.sql`** ke dalam database tersebut.
+4. Buka file `config/database.php` dan sesuaikan koneksi databasenya.
+5. Akses aplikasi melalui browser (`http://localhost/uangku`).
 
-👥 Manajemen Pelanggan: Pengelolaan data pelanggan lengkap dengan status langganan.
+##  Akses Login Bawaan
+- **Username:** `admin`
+- **Password:** `password123`
 
-💸 Arus Kas (Cashflow): Pencatatan otomatis setiap transaksi masuk dan keluar.
+##  Credit
+Dikembangkan oleh **[niz4m](https://niz4m.domcloud.dev)**.
 
-🕵️ Log Aktivitas (Audit Trail): Rekam jejak aktivitas user untuk keamanan sistem.
-
-🔒 Keamanan Tinggi: Proteksi SQL Injection (PDO) dan enkripsi password Bcrypt.
-
-📥 Export Data: Fitur unduh data pelanggan langsung ke format CSV/Excel.
-
-📱 Responsive Design: Tampilan optimal di berbagai perangkat (Mobile & Desktop).
-
-🚀 Panduan Instalasi
-1. Penggunaan di Localhost (XAMPP/Laragon)
-Download repository ini dan letakkan di folder htdocs atau www.
-
-Buka phpMyAdmin, buat database baru dengan nama uangku_db.
-
-Import file database/uangku.sql ke dalam database tersebut.
-
-Sesuaikan kredensial database di file config/database.php.
-
-Akses melalui browser di: http://localhost/uangku.
-
-2. Penggunaan di Hosting (cPanel)
-Upload semua file aplikasi ke folder public_html.
-
-Buat Database, User, dan Password melalui menu MySQL® Databases di cPanel.
-
-Hubungkan User ke Database dengan mencentang ALL PRIVILEGES.
-
-Import file uangku.sql melalui phpMyAdmin di hosting Anda.
-
-Perbarui file config/database.php sesuai dengan detail database hosting Anda.
-
-🔑 Akses Login Bawaan
-Username: admin
-Password: admin
-
-Developed by niz4m
